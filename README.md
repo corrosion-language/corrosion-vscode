@@ -4,12 +4,8 @@ This extension aims to add syntax highlighting for the corrosion language.
 
 ## Features
 
-TODO: Add features here
+- Syntax highlighting
 
 ## Known Issues
 
-This extension does nothing yet.
-
-## Release Notes
-
-Nothing yet
+The function of this extension is currently very minimal.
