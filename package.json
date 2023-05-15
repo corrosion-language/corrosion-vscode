@@ -1,25 +1,34 @@
 {
-  "name": "corrosion",
-  "displayName": "Corrosion",
-  "description": "Syntax highlighting for corrosion language",
-  "version": "0.1.0",
-  "engines": {
-    "vscode": "^1.78.0"
-  },
-  "categories": [
-    "Programming Languages"
-  ],
-  "contributes": {
-    "languages": [{
-      "id": "cor",
-      "aliases": ["corrosion", "cor"],
-      "extensions": [".cor"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "cor",
-      "scopeName": "source.cor",
-      "path": "./syntaxes/cor.tmLanguage.json"
-    }]
-  }
+	"name": "corrosion",
+	"displayName": "Corrosion",
+	"description": "Syntax highlighting for corrosion language",
+	"version": "0.1.0",
+	"engines": {
+		"vscode": "^1.78.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "cor",
+				"aliases": [
+					"corrosion",
+					"cor"
+				],
+				"extensions": [
+					".cor"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "cor",
+				"scopeName": "source.cor",
+				"path": "./syntaxes/cor.tmLanguage.json"
+			}
+		]
+	}
 }

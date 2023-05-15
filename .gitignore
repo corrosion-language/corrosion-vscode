@@ -2,3 +2,4 @@ node_modules
 *.vsix
 test.cor
 grammar.hpp
+.vscode/

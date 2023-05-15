@@ -9,9 +9,7 @@
             "name": "Extension",
             "type": "extensionHost",
             "request": "launch",
-            "args": [
-                "--extensionDevelopmentPath=${workspaceFolder}"
-            ]
+            "args": ["/home/wdotmathree/VSCode/corrosion/test.cor", "--extensionDevelopmentPath=${workspaceFolder}"]
         }
     ]
 }

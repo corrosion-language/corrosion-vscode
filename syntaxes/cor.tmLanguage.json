@@ -2,30 +2,54 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "corrosion",
 	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
+		{ "include": "#control" },
+		{ "include": "#types" },
+		{ "include": "#strings" },
+		{ "include": "#arith" },
+		{ "include": "#literal-num" },
+		{ "include": "#literal-bool" },
+		{ "include": "#delimiter" },
+		{ "include": "#function" }
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.cor",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+		"control": {
+			"match": "\\b(func: ?|var: ?|return|if|while|for|in)\\b",
+			"name": "keyword.control"
+		},
+		"types": {
+			"match": "\\b(int|float|string|bool)\\b",
+			"name": "keyword.other"
+		},
+		"arith": {
+			"match": "(\\+|-|\\/|\\*|%|=|==|<|>|<=|>=)",
+			"name": "keyword.operator"
 		},
 		"strings": {
-			"name": "string.quoted.double.cor",
+			"name": "string.quoted.double",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.cor",
+					"name": "constant.character.escape",
 					"match": "\\\\."
 				}
 			]
+		},
+		"literal-num": {
+			"name": "constant.numeric",
+			"match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+		},
+		"literal-bool": {
+			"name": "constant.language",
+			"match": "\\b(true|false)\\b"
+		},
+		"delimiter": {
+			"name": "meta",
+			"match": ",|;| "
+		},
+		"function": {
+			"name": "entity.name.function",
+			"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\("
 		}
 	},
 	"scopeName": "source.cor"
