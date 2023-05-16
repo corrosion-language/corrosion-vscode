@@ -2,18 +2,22 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "corrosion",
 	"patterns": [
+		{ "include": "#comments" },
 		{ "include": "#control" },
 		{ "include": "#types" },
 		{ "include": "#strings" },
 		{ "include": "#arith" },
 		{ "include": "#literal-num" },
 		{ "include": "#literal-bool" },
-		{ "include": "#delimiter" },
 		{ "include": "#function" }
 	],
 	"repository": {
+		"comments": {
+			"match": "\\/\\/.*$",
+			"name": "comment.line.double-slash"
+		},
 		"control": {
-			"match": "\\b(func: ?|var: ?|return|if|while|for|in)\\b",
+			"match": "(\\b(return|if|while|for|in)\\b)|(func:|var:)",
 			"name": "keyword.control"
 		},
 		"types": {
@@ -37,15 +41,11 @@
 		},
 		"literal-num": {
 			"name": "constant.numeric",
-			"match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+			"match": "\\b[0-9]+(\\.[0-9]+)?[fF]?\\b"
 		},
 		"literal-bool": {
 			"name": "constant.language",
 			"match": "\\b(true|false)\\b"
-		},
-		"delimiter": {
-			"name": "meta",
-			"match": ",|;| "
 		},
 		"function": {
 			"name": "entity.name.function",
