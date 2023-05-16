@@ -3,3 +3,5 @@ node_modules
 test.cor
 grammar.hpp
 .vscode/
+.package-lock.json
+out/

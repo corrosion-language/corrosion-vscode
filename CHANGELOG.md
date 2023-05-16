@@ -9,6 +9,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Semantic highlighting
 - Language server (for code completion, etc.)
 
+## [0.2.0] - 2023.05.16
+
+### Added
+
+- Typescript compilation to enable further development
+- Semantic highlighting
+
 ## [0.1.1] - 2023.05.16
 
 ### Fixed
