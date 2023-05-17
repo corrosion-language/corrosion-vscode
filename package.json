@@ -18,6 +18,10 @@
 		"lint": "eslint src --ext ts",
 		"test": "node ./out/test/runTest.js"
 	},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corrosion-language/corrosion-vscode.git"
+  },
 	"contributes": {
 		"languages": [
 			{
