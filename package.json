@@ -2,7 +2,7 @@
 	"name": "corrosion",
 	"displayName": "Corrosion",
 	"description": "Syntax highlighting for corrosion language",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"engines": {
 		"vscode": "^1.78.0"
 	},

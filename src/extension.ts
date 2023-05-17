@@ -13,11 +13,15 @@ const provider: vscode.DocumentSemanticTokensProvider = {
 			let linepos = tmpline.indexOf("//");
 			linepos = linepos < 0 ? tmpline.length - 1 : linepos - 1;
 			for (; linepos >= 0; linepos--) {
-				if (tmpline[linepos] != " " && tmpline[linepos] != "\t") break;
+				if (tmpline[linepos] !== " " && tmpline[linepos] !== "\t") {
+					break;
+				}
 			}
 			tmpline = tmpline.substring(0, linepos + 1);
 			for (linepos = 0; linepos < tmpline.length; linepos++) {
-				if (tmpline[linepos] != " " && tmpline[linepos] != "\t") break;
+				if (tmpline[linepos] !== " " && tmpline[linepos] !== "\t") {
+					break;
+				}
 			}
 			tmpline = tmpline.substring(linepos);
 			tmpline.replace(/\s+/g, " ");
@@ -30,7 +34,9 @@ const provider: vscode.DocumentSemanticTokensProvider = {
 					if (varBegin++ >= 0) {
 						let varEnd = varBegin + 1;
 						for (; varEnd < line.length; varEnd++) {
-							if (line[varEnd].match(/[a-zA-Z0-9_]/) === null) break;
+							if (line[varEnd].match(/[a-zA-Z0-9_]/) === null) {
+								break;
+							}
 						}
 						let varName = line.substring(varBegin, varEnd);
 						vars.push(varName);
@@ -50,7 +56,7 @@ const provider: vscode.DocumentSemanticTokensProvider = {
 						best = v.length;
 					}
 				}
-				if (best != -1) {
+				if (best !== -1) {
 					tokensBuilder.push(new vscode.Range(i, pos + linepos, i, pos + linepos + vars[0].length), "variable");
 					linepos += pos + best;
 				} else {
